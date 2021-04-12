@@ -1,0 +1,368 @@
+{
+    "apps" : [{
+        "exec_mode" : "fork",
+        "instances" : "1",
+        "script" : "index.js",
+        "name" : "AAF",
+        "interpreter" : "node",
+        "env" : {
+            "server": {
+                "cert": "./cert/server.crt",
+                "key": "./cert/server.key",
+                "use_https": false,
+                "app_port": "3000",
+                "app_host": "0.0.0.0",
+                "health_check_url": [
+                    "/healthcheck"
+                ]
+            },
+            "service": {
+                "sdf": {
+                    "default": {
+                        "conn_type": "http",
+                        "ip": "10.138.37.162",
+                        "port": "21400",
+                        "path": "/",
+                        "max_retry": 3,
+                        "timeout": 5,
+                        "retry_condition": "TIMEOUT"
+                    },
+                    "getGupGlobalService": {
+                        "path": "/v1/configuration/o/nss/o/gup/o/service.json",
+                        "max_retry": 3,
+                        "retry_condition": "TIMEOUT"
+                    },
+                    "getGupCommon": {
+                        "path": "/v1/subscriber/${keyName}/${keyValue}.json",
+                        "max_retry": 3,
+                        "retry_condition": "TIMEOUT"
+                    },
+                    "getStbManageDeviceProfile": {
+                        "path": "/v1/device/subdata/stb/deviceId/${deviceId}.json",
+                        "max_retry": 3,
+                        "retry_condition": "TIMEOUT"
+                    },
+                    "getGupDevice": {
+                        "path": "/v1/subscriber/${keyName}/${keyValue}/subdata/profile/deviceId/${deviceId}.json",
+                        "max_retry": 3,
+                        "retry_condition": "TIMEOUT"
+                    },
+                    "postInsertSubscriber": {
+                        "path": "/v1/method/insertSubscriber.json",
+                        "max_retry": 3,
+                        "retry_condition": "TIMEOUT"
+                    },
+                    "postModifyIdentity": {
+                        "path": "/v1/method/modifyIdentity.json",
+                        "max_retry": 3,
+                        "retry_condition": "TIMEOUT"
+                    },
+                    "deleteModifyIdentity": {
+                        "path": "/v1/method/modifyIdentity.json",
+                        "max_retry": 3,
+                        "retry_condition": "TIMEOUT"
+                    },
+                    "putGupServiceElement": {
+                        "path": "/v1/subscriber/${keyName}/${keyValue}/subdata/profile/serviceProfileId/${serviceProfileId}/serviceId/${serviceId}.json",
+                        "max_retry": 3,
+                        "retry_condition": "TIMEOUT"
+                    },
+                    "putGupSubProfile": {
+                        "path": "/v1/subscriber/${keyName}/${keyValue}/subdata/profile/msisdn/${msisdn}.json",
+                        "max_retry": 3,
+                        "retry_condition": "TIMEOUT"
+                    },
+                    "putGupImpu": {
+                        "path": "/v1/subscriber/${keyName}/${keyValue}/subdata/profile/publicId/${publicId}.json",
+                        "max_retry": 3,
+                        "retry_condition": "TIMEOUT"
+                    },
+                    "postGupServiceProfile": {
+                        "path": "/v1/subscriber/${keyName}/${keyValue}/subdata/profile/serviceProfileId/${serviceProfileId}.json",
+                        "max_retry": 3,
+                        "retry_condition": "TIMEOUT"
+                    },
+                    "deleteGupServiceProfile": {
+                        "path": "/v1/subscriber/${keyName}/${keyValue}/subdata/profile/serviceProfileId/${serviceProfileId}.json",
+                        "max_retry": 3,
+                        "retry_condition": "TIMEOUT"
+                    },
+                    "postGupServiceElement": {
+                        "path": "/v1/subscriber/${keyName}/${keyValue}/subdata/profile/serviceProfileId/${serviceProfileId}/serviceId/${serviceId}.json",
+                        "max_retry": 3,
+                        "retry_condition": "TIMEOUT"
+                    },
+                    "deleteGupServiceElement": {
+                        "path": "/v1/subscriber/${keyName}/${keyValue}/subdata/profile/serviceProfileId/${serviceProfileId}/serviceId/${serviceId}.json",
+                        "max_retry": 3,
+                        "retry_condition": "TIMEOUT"
+                    },
+                    "deleteInsertSubscriber": {
+                        "path": "/v1/method/deleteSubscriber.json",
+                        "max_retry": 3,
+                        "retry_condition": "TIMEOUT"
+                    },
+                    "postGupImpi": {
+                        "path": "/v1/subscriber/${keyName}/${keyValue}/subdata/profile/privateId/${privateId}.json",
+                        "max_retry": 3,
+                        "retry_condition": "TIMEOUT"
+                    },
+                    "putGupImpi": {
+                        "path": "/v1/subscriber/${keyName}/${keyValue}/subdata/profile/privateId/${privateId}.json",
+                        "max_retry": 3,
+                        "retry_condition": "TIMEOUT"
+                    },
+                    "deleteGupImpi": {
+                        "path": "/v1/subscriber/${keyName}/${keyValue}/subdata/profile/privateId/${privateId}.json",
+                        "max_retry": 3,
+                        "retry_condition": "TIMEOUT"
+                    },
+                    "postGupImpu": {
+                        "path": "/v1/subscriber/${keyName}/${keyValue}/subdata/profile/publicId/${publicId}.json",
+                        "max_retry": 3,
+                        "retry_condition": "TIMEOUT"
+                    },
+                    "deleteGupImpu": {
+                        "path": "/v1/subscriber/${keyName}/${keyValue}/subdata/profile/publicId/${publicId}.json",
+                        "max_retry": 3,
+                        "retry_condition": "TIMEOUT"
+                    },
+                    "postGupSubProfile": {
+                        "path": "/v1/subscriber/${keyName}/${keyValue}/subdata/profile/msisdn/${msisdn}.json",
+                        "max_retry": 3,
+                        "retry_condition": "TIMEOUT"
+                    },
+                    "deleteGupSubProfile": {
+                        "path": "/v1/subscriber/${keyName}/${keyValue}/subdata/profile/msisdn/${msisdn}.json",
+                        "max_retry": 3,
+                        "retry_condition": "TIMEOUT"
+                    },
+                    "postGupDevice": {
+                        "path": "/v1/subscriber/${keyName}/${keyValue}/subdata/profile/deviceId/${deviceId}.json",
+                        "max_retry": 3,
+                        "retry_condition": "TIMEOUT"
+                    },
+                    "deleteGupDevice": {
+                        "path": "/v1/subscriber/${keyName}/${keyValue}/subdata/profile/deviceId/${deviceId}.json",
+                        "max_retry": 3,
+                        "retry_condition": "TIMEOUT"
+                    }
+                },
+                "scf": {
+                    "default": {
+                        "conn_type": "http",
+                        "ip": "10.138.37.162",
+                        "port": "21600",
+                        "path": "/",
+                        "max_retry": 3,
+                        "timeout": 5,
+                        "retry_condition": "TIMEOUT"
+                    },
+                    "getDecryptPartnerSpecificPrivateId": {
+                        "path": "/scf/v2/partnerSpecificPrivateId/${identityValueEncode}commandId=${commmandId}",
+                        "max_retry": 3,
+                        "retry_condition": "TIMEOUT"
+                    },
+                    "postGeneratePartnerSpecificPrivateId": {
+                        "path": "/scf/v3/partnerSpecificPrivateId.json",
+                        "max_retry": 3,
+                        "retry_condition": "TIMEOUT"
+                    }
+                },
+                "dsmp": {
+                    "default": {
+                        "conn_type": "http",
+                        "ip": "10.138.37.162",
+                        "port": "21500",
+                        "path": "/",
+                        "max_retry": 3,
+                        "timeout": 5,
+                        "retry_condition": "TIMEOUT"
+                    },
+                    "postInsertSubscriber": {
+                        "path": "/v1/DSMP/insertSubscriber.json",
+                        "max_retry": 3,
+                        "retry_condition": "TIMEOUT"
+                    },
+                    "deleteInsertSubscriber": {
+                        "path": "/v1/DSMP/deleteSubscriber.json",
+                        "max_retry": 3,
+                        "retry_condition": "TIMEOUT"
+                    }
+                },
+                "ldap": {
+                    "default": {
+                        "conn_type": "http",
+                        "ip": "10.138.37.162",
+                        "port": "21300",
+                        "path": "/",
+                        "max_retry": 3,
+                        "timeout": 5,
+                        "retry_condition": "TIMEOUT"
+                    },
+                    "ladp": {
+                        "path": "/api/v1/api-dir/mmc_GNEmployeeAuthenWebService/EmployeeAuthenWebService/EmployeeAuthenWebService.jws?wsdl",
+                        "max_retry": 3,
+                        "retry_condition": "TIMEOUT"
+                    }
+                },
+                "ssoids": {
+                    "default": {
+                        "conn_type": "http",
+                        "ip": "10.138.37.162",
+                        "port": "21300",
+                        "path": "/",
+                        "max_retry": 3,
+                        "timeout": 5,
+                        "retry_condition": "TIMEOUT"
+                    },
+                    "ssoids": {
+                        "path": "/api/v1/api-dir/mmc_GNEmployeeAuthenWebService/EmployeeAuthenWebService/EmployeeAuthenWebService.jws?wsdl",
+                        "max_retry": 3,
+                        "retry_condition": "TIMEOUT"
+                    }
+                },
+                "thirdparty": {
+                    "default": {
+                        "conn_type": "http",
+                        "ip": "10.138.37.162",
+                        "port": "21300",
+                        "path": "/",
+                        "max_retry": 3,
+                        "timeout": 5,
+                        "retry_condition": "TIMEOUT"
+                    },
+                    "thirdparty": {
+                        "path": "/api/v1/ThirdPartyAuthentication.json",
+                        "max_retry": 3,
+                        "retry_condition": "TIMEOUT"
+                    }
+                },
+                "mongo": {
+                    "default": {
+                        "conn_type": "mongodb",
+                        "ip": "10.138.37.162",
+                        "port": "25000",
+                        "db": "mongodb",
+                        "max_retry": 0,
+                        "timeout": 4,
+                        "retry_condition": "CONNECTION_ERROR",
+                        "connection_string": {
+                            "connectTimeoutMS": 10000
+                        }
+                    }
+                }
+            },
+            "app": {
+                "postsubscriptions": {
+                    "Subscriptions_CSPName_CheckProfile_List": [
+                        "AIS",
+                        "AISFBB"
+                    ],
+                    "Subscriptions_AppName_Allow_Create_Sub": [
+                        "AIS",
+                        "AISFBB"
+                    ],
+                    "Nafa_Create_Amf_Enable": true,
+                    "Nafa_Ds3_Class_Of_Service_Ais": "6000",
+                    "Nafa_Ds3_Class_Of_Service_Non_Ais": "7000",
+                    "Nafa_Ds3_Brand_Id_Non_Ais": "8",
+                    "Nafa_Ds3spname_Non_Ais": "non_ais",
+                    "Email_Create_Amf_Enable": true,
+                    "Email_Ds3_Class_Of_Service_Ais": "6000",
+                    "Email_Ds3_Class_Of_Service_Non_Ais": "7000",
+                    "Email_Ds3_Brand_Id_Non_Ais": "8",
+                    "Email_Ds3spname_Non_Ais": "non_ais",
+                    "Subscriptions_Masteredby": [
+                        "2",
+                        "3"
+                    ],
+                    "Subscriptions_StbManageDevice_Status_List": [
+                        "sold",
+                        "fix",
+                        "fixing"
+                    ],
+                    "correlate_time": 60
+                },
+                "postauthenticatecustomer": {
+                    "Authentication_Customer_Third_party_appname_list": [
+                        "MYAIS",
+                        "GOMO"
+                    ],
+                    "Authentication_Customer_sso_ids_appname_list": [
+                        "MYAIS",
+                        "GOMO"
+                    ],
+                    "Authentication_Customer_sso_ids_location_appname_list": [
+                        "MYAIS",
+                        "GOMO"
+                    ],
+                    "Authentication_Customer_ldap_appname_list": [
+                        "MYAIS",
+                        "GOMO"
+                    ]
+                },
+                "checkpublicavailability": {
+                    "CheckPublicAvailability_appName_checkCredential_list": [
+                        "MYAIS",
+                        "GOMO"
+                    ]
+                },
+                "Re_Get_GupGlobalService": 0,
+                "Fbb_Id_Format": [
+                    "88",
+                    "89"
+                ],
+                "Appname_Check_Adding_Suffix": [
+                    "myais"
+                ],
+                "AppName_List_CheckCredential_GupServiceElement": [
+                    "myais"
+                ],
+                "ServiceProfileId_Is_Not_Ais": "9",
+                "ServiceProfileId_FbbId": "1",
+                "Managed_Device_Id_Format": "1|1|1|1",
+                "suffix_domian_for_generate_privateid_45_digit": "@ais.co.th"
+                
+            },
+            "commonRod": {
+                "body_parser_limit": "1mb"
+            },
+            "commonLog": {
+                "projectName": "AAF",
+                "log": {
+                    "path": "./logs/appLog/",
+                    "level": "debug",
+                    "console": true,
+                    "file": true,
+                    "time": 60,
+                    "format": "pipe"
+                },
+                "summary": {
+                    "path": "./logs/summary/",
+                    "console": true,
+                    "file": true,
+                    "time": 15,
+                    "format": "pipe"
+                },
+                "detail": {
+                    "path": "./logs/detail/",
+                    "console": true,
+                    "file": true,
+                    "time": 15,
+                    "rawData": true
+                },
+                "stat": {
+                    "time": "60",
+                    "path": "./logs/statPath/",
+                    "console": true,
+                    "file": true,
+                    "mode": 1,
+                    "statInterval": 1,
+                    "flush": true,
+                    "format": "pipe"
+                }
+            }
+        }
+    }]
+}

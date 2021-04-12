@@ -1,0 +1,14 @@
+logs/
+node_modules/
+.idea/
+.vscode/
+verify-load-config.js
+test.js
+service.model.js
+mongoose.js
+Mock_SDF_GupGlobalService/
+Mock_SDF_GupCommon/
+Mock_SDF_GupGlobalService - Copy - Copy/
+try/
+Mock_SDF_GupGlobalService/
+.env.json

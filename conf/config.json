@@ -1,0 +1,109 @@
+{
+    "routing": {
+        "checkpublicidavailability": [
+            {
+                "ctrl_name": "checkPublicIdAvailability",
+                "method": [
+                    "post"
+                ],
+                "url": [
+                    "/api/v3/aaf/checkPublicIdAvailability/:idType/:idValue.(json)",
+                    "/api/v3/aaf/checkPublicIdAvailability/:idType/.(json)",
+                    "/api/v3/aaf/checkPublicIdAvailability/:idType.(json)",
+                    "/api/v3/aaf/checkPublicIdAvailability//:idValue.(json)",
+                    "/api/v3/aaf/checkPublicIdAvailability//.json",
+                    "/api/v3/aaf/checkPublicIdAvailability/.(json)",
+                    "/api/v3/aaf/checkPublicIdAvailability.json"
+                ]
+            }
+        ],
+        "postsubscription": [
+            {
+                "ctrl_name": "postSubscription-ctrl",
+                "method": [
+                    "post"
+                ],
+                "url": [
+                    "/aaf/v3/subscriptions/:idType/:idValue.(json)",
+                    "/aaf/v3/subscriptions/:idType/.(json)",
+                    "/aaf/v3/subscriptions/:idType.(json)",
+                    "/aaf/v3/subscriptions//:idValue.(json)",
+                    "/aaf/v3/subscriptions//.json",
+                    "/aaf/v3/subscriptions/.(json)",
+                    "/aaf/v3/subscriptions.json"
+                ]
+            }
+        ],
+        "get_private_id": [
+            {
+                "ctrl_name": "get-privateid-ctrl",
+                "method": [
+                    "get"
+                ],
+                "url": [
+                    "/api/v3/aaf/privateId",
+                    "/api/v3/aaf/privateId.json"
+                ]
+            }
+        ],
+        "postauthenticatecustomer": [
+            {
+                "ctrl_name": "postAuthenticateCustomer-ctrl",
+                "method": [
+                    "post"
+                ],
+                "url": [
+                    "/aaf/v3/authenticatePublicId/:idType/:idValue.(json)",
+                    "/aaf/v3/authenticatePublicId/:idType/.(json)",
+                    "/aaf/v3/authenticatePublicId/:idType.(json)",
+                    "/aaf/v3/authenticatePublicId//:idValue.(json)",
+                    "/aaf/v3/authenticatePublicId//.json",
+                    "/aaf/v3/authenticatePublicId/.(json)",
+                    "/aaf/v3/authenticatePublicId.json"
+                ]
+            }
+        ],
+        "pushnotificationinfo": [
+            {
+                "ctrl_name": "post-pushnotificationinfo-ctrl",
+                "method": [
+                    "post"
+                ],
+                "url": [
+                    "/api/v3/aaf/pushNotificationInfo"
+                ]
+            }
+        ],
+        "getcontactnumber": [
+            {
+                "ctrl_name": "getcontactnumber-ctrl",
+                "method": [
+                    "get"
+                ],
+                "url": [
+                    "/api/v2/aaf/contactNumber/:idType/:idValue.(json)",
+                    "/api/v2/aaf/contactNumber/:idType/.(json)",
+                    "/api/v2/aaf/contactNumber/:idType.(json)",
+                    "/api/v2/aaf/contactNumber//:idValue.(json)",
+                    "/api/v2/aaf/contactNumber//.json",
+                    "/api/v2/aaf/contactNumber/.(json)",
+                    "/api/v2/aaf/contactNumber.json"
+                ]
+            }
+        ],        
+        "unknown": [
+            {
+                "ctrl_name": "unknown-ctrl",
+                "method": [
+                    "post",
+                    "put",
+                    "get",
+                    "delete"
+                ],
+                "url": [
+                    "*"
+                ]
+            }
+        ]
+    }
+}
